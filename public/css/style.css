@@ -22,10 +22,12 @@ nav {
 }
 
 .card {
-  width: 80%;
+  width: 50%;
   margin: 2rem;
   background: teal;
   margin-left: 50px;
+  display: flex;
+
 }
 
 .card a header {
@@ -40,8 +42,11 @@ nav {
 .card-body {
   display: flex;
   padding: 50px;
+  font-size: 1rem;
+  margin-top: 30px;
 
 }
+
 
 .card-body img {
 
@@ -49,10 +54,6 @@ nav {
   height: auto;
 }
 
-.card-body {
-  font-size: 1rem;
-  margin-top: 30px;
-}
 
 .card-body p {
   align-items: center;
@@ -62,4 +63,12 @@ nav {
   color: gold;
   text-decoration: none;
 
+}
+
+button {
+
+  width: 140px;
+  height: 50px;
+  margin-top: auto;
+  color: pink;
 }

@@ -79,7 +79,7 @@ const productData = [
         stock: 7,
         description:
             "Angel's trumpets are evergreen plants with many branching trunks and are typically less than 8 metres (26 feet) in height",
-        image_source: 'edangeltrumpet.jpg',
+        image_source: 'redangeltrumpet.jpg',
         category_id: 2,
     },
     {

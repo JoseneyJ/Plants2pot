@@ -1,0 +1,65 @@
+body {
+  font-family: Arial;
+  margin: 0;
+  background: pink;
+  font-weight: 300;
+}
+
+header {
+
+  background: teal;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+nav {
+
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.card {
+  width: 80%;
+  margin: 2rem;
+  background: teal;
+  margin-left: 50px;
+}
+
+.card a header {
+
+  font-size: 1.3rem;
+  color: gold;
+  padding-top: 15px;
+  margin-left: 20px;
+
+}
+
+.card-body {
+  display: flex;
+  padding: 50px;
+
+}
+
+.card-body img {
+
+  width: 20%;
+  height: auto;
+}
+
+.card-body {
+  font-size: 1rem;
+  margin-top: 30px;
+}
+
+.card-body p {
+  align-items: center;
+  margin-right: 50px;
+  padding-left: 15px;
+  font-weight: bold;
+  color: gold;
+  text-decoration: none;
+
+}

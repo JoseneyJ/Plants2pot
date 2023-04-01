@@ -1,0 +1,36 @@
+{
+  "name": "groupproject2",
+  "version": "1.0.0",
+  "description": "Welcome to Plant2Pot Repository. This is a web application that allows the purchase of all types of plants!",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "watch": "nodemon server.js",
+    "seed": "node seeds/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoseneyJ/GroupProject2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoseneyJ/GroupProject2/issues"
+  },
+  "homepage": "https://github.com/JoseneyJ/GroupProject2#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "connect-session-sequelize": "^7.1.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.4",
+    "express-session": "^1.17.3",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.2.0",
+    "nodemon": "^2.0.21",
+    "sequelize": "^6.30.0"
+  },
+  "devDependencies": {}
+}

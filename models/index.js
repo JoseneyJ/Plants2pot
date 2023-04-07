@@ -28,11 +28,13 @@ Image.belongsTo(Product, {
 })
 
 Product.belongsToMany(User, {
-    through: 'Cart',
+    through: Cart,
+    foreignKey: 'product_id',
 })
 
 User.belongsToMany(Product, {
-    through: 'Cart',
+    through: Cart,
+    foreignKey: 'user_id',
 })
 
 module.exports = {

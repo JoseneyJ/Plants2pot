@@ -102,17 +102,35 @@ router.get('/aboutus', (req, res) => {
     res.render('aboutus')
 })
 
-router.get('/cart', (req, res) => {
-    res.render('cart')
-})
-router.post('/cart', async (req, res) => {
-    const cart = await Cart.create({
-        user_id: '1',
-        product_id: req.body.productId,
-    })
-    if (cart) {
-        console.log('should be good?')
+router.get('/cart', async (req, res) => {
+    const cart = await Cart.findAll()
+    const products = cart.map((x) => x.product_id)
+    const displayCartItes = products.map((x) => getProductData(x))
+    //send products, call them items
+    async function getProductData(id) {
+        const productData = await Product.findByPk(id, {
+            include: [
+                {
+                    model: Category,
+                    params: ['id', 'category_name'],
+                },
+                {
+                    model: Tag,
+                    through: {
+                        model: ProductTag,
+                        attributes: [],
+                    },
+                },
+            ],
+        })
+
+        const product = await productData.get({ plain: true })
+        return product
     }
+    console.log(displayCartItes)
+    // res.json(product)
+
+    res.render('cart')
 })
 
 module.exports = router

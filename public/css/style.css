@@ -1,8 +1,11 @@
 body {
-  font-family: Arial;
+  font-family: 'DM Serif Display', serif;
+  font-family: 'Kaushan Script', cursive;
+  font-family: 'Oleo Script', cursive;
+  font-family: 'PT Serif', serif;
   margin: 0;
-  background-color: pink;
   font-weight: 300;
+  background-image: url(https://secure.img1-cg.wfcdn.com/im/78962530/resize-h445%5Ecompr-r85/2018/201805033/Mirage+Abstract+Wallpaper.jpg);
 }
 
 header {
@@ -22,11 +25,11 @@ nav {
 }
 
 .card {
-  width: 50%;
-  margin: 2rem;
+  width: 90%;
+  margin: 1rem;
   background: teal;
-  margin-left: 300px;
-  border-width: 2px;
+  margin-left: 50px;
+  display: flex;
 
 }
 
@@ -69,5 +72,3 @@ button {
   margin-top: auto;
   color: pink;
 }
-
-.product-details {}

@@ -41,4 +41,24 @@ I WANT to view an Ecommerce website
 SO THAT I can purchase plants from this webpage
 ```
 ## Acceptance Criteria
+```md
+GIVEN a Ecommerce website
+WHEN I visit the site for the first time
+THEN I am presented with the homepage, which includes photos of plants the website has  available; the plants description, stock availability, and the price; navigation links for the homepage; and the option to log in.
+WHEN I click on the homepage option
+THEN I am taken to the homepage
+WHEN I click on any plant
+THEN I am prompted to either sign up or log in 
+WHEN I choose to sign up
+THEN I have the option to create a username and password
+WHEN I click on the sign-up textbox
+THEN my user credentials are saved and I am logged into the site
+WHEN I revisit the site at a later time and choose to sign in
+THEN I am prompted to enter my username and password
+WHEN I am signed in to the site
+THEN I am taken to the homepage and presented with the plants for sale
+WHEN I click on 'add to cart'
+THEN I am prompted to login first before adding to cart.
+
+```
 ## Mock-Up

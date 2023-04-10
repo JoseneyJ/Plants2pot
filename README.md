@@ -61,4 +61,6 @@ WHEN I click on 'add to cart'
 THEN I am prompted to login first before adding to cart.
 
 ```
-## Mock-Up
+## Snippets 
+
+<img width="1383" alt="Screenshot 2023-04-09 at 9 49 30 PM" src="https://user-images.githubusercontent.com/119374215/230809689-e647e7e5-9c1f-4f65-bd3b-efde2f72a786.png">

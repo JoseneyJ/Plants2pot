@@ -1,7 +1,14 @@
 const { Model, DataTypes } = require('sequelize')
 const sequelize = require('../config/connection')
+const bcrypt = require('bcrypt')
 
-class User extends Model {}
+class User extends Model {
+    checkPassword(loginPw) {
+        console.log(loginPw)
+        console.log(this.password)
+        return this.password === loginPw
+    }
+}
 
 User.init(
     {
@@ -40,4 +47,4 @@ User.init(
     }
 )
 
-module.exports = User;
+module.exports = User

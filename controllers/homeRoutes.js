@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { Product, Category, Tag, ProductTag, Cart } = require('../models')
+const { Product, Category, Tag, ProductTag, Cart, User } = require('../models')
 const withAuth = require('../utils/auth')
 
 router.get('/', async (req, res) => {
@@ -102,35 +102,38 @@ router.get('/aboutus', (req, res) => {
     res.render('aboutus')
 })
 
-router.get('/cart', async (req, res) => {
-    const cart = await Cart.findAll()
-    const products = cart.map((x) => x.product_id)
-    const displayCartItes = products.map((x) => getProductData(x))
+router.get('/cart', withAuth, async (req, res) => {
+    const cart = await User.findByPk(req.session.user_id, {
+        include: [{ model: Product, through: Cart }],
+    })
+    console.log(cart)
+    // const products = cart.map((x) => x.product_id)
+    const displayCartItems = cart.get({ plain: true })
     //send products, call them items
-    async function getProductData(id) {
-        const productData = await Product.findByPk(id, {
-            include: [
-                {
-                    model: Category,
-                    params: ['id', 'category_name'],
-                },
-                {
-                    model: Tag,
-                    through: {
-                        model: ProductTag,
-                        attributes: [],
-                    },
-                },
-            ],
-        })
+    // async function getProductData(id) {
+    //     const productData = await Product.findByPk(id, {
+    //         include: [
+    //             {
+    //                 model: Category,
+    //                 params: ['id', 'category_name'],
+    //             },
+    //             {
+    //                 model: Tag,
+    //                 through: {
+    //                     model: ProductTag,
+    //                     attributes: [],
+    //                 },
+    //             },
+    //         ],
+    //     })
 
-        const product = await productData.get({ plain: true })
-        return product
-    }
-    console.log(displayCartItes)
+    //     const product = await productData.get({ plain: true })
+    //     return product
+    // }
+    // console.log(displayCartItems)
     // res.json(product)
 
-    res.render('cart')
+    res.render('cart', displayCartItems)
 })
 
 module.exports = router

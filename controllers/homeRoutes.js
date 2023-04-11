@@ -23,6 +23,7 @@ router.get('/', async (req, res) => {
         const products = await productData.map((product) =>
             product.get({ plain: true })
         )
+
         res.render('homepage', {
             products,
             logged_in: req.session.logged_in,
@@ -106,9 +107,9 @@ router.get('/cart', withAuth, async (req, res) => {
     const cart = await User.findByPk(req.session.user_id, {
         include: [{ model: Product, through: Cart }],
     })
-    console.log(cart)
     // const products = cart.map((x) => x.product_id)
     const displayCartItems = cart.get({ plain: true })
+    const products = displayCartItems.products
     //send products, call them items
     // async function getProductData(id) {
     //     const productData = await Product.findByPk(id, {
@@ -132,8 +133,8 @@ router.get('/cart', withAuth, async (req, res) => {
     // }
     // console.log(displayCartItems)
     // res.json(product)
-
-    res.render('cart', displayCartItems)
+    console.log(products)
+    res.render('cart', { products })
 })
 
 module.exports = router

@@ -1,6 +1,6 @@
 {{#if logged_in}}
 <section class="product">
-  <img src="/images/{{product.image_source}}"> 
+  <img src="/images/{{product.image_source}}" style="height: 300px; width: auto"> 
   <div class="product-details">
     <h3>{{product.product_name}}</h3>
     <p>Price $: {{product.price}}</p>
@@ -9,6 +9,6 @@
 </section>
 <div class="card-login-first">
 {{else}}
-<h2 href="/login">You must login first to view this plant</h2>
+<a href="/login">You must login first to view this plant</a>
 {{/if}}
 </div>

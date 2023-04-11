@@ -1,14 +1,11 @@
-const button = document.getElementById('addToCart')
+const buttons = document.querySelectorAll('#addToCart')
 
 function addtocart() {
-    const productId = parseInt(
-        document.getElementById('addToCart').getAttribute('data-productid')
-    )
-    console.log(productId)
+    const productId = parseInt(this.getAttribute('data-productid'))
     fetch('/api/cart', {
         method: 'POST',
         body: JSON.stringify({ productId }),
         headers: { 'Content-Type': 'application/json' },
     })
 }
-button.addEventListener('click', addtocart)
+buttons.forEach((button) => button.addEventListener('click', addtocart))

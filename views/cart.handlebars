@@ -1,8 +1,4 @@
-<script id="cart-template" type="text/x-handlebars-template">
-  {{#each products}}
-    <div class="cart-product">
-      <span class="product-name">{{product_name}}</span>
-      <span class="product-price">{{price}}</span>
-    </div>
+<h1>Cart Items</h1>
+  {{#each products as |product|}}
+  {{> product-details}}
   {{/each}}
-</script>

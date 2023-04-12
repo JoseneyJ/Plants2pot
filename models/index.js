@@ -3,7 +3,8 @@ const Category = require('./category')
 const Tag = require('./tag')
 const ProductTag = require('./productTag')
 const Image = require('./Image')
-const User = require('./users')
+const Cart = require('./Cart')
+const User = require('./Users')
 
 Product.belongsTo(Category, {
     foreignKey: 'category_id',
@@ -26,6 +27,16 @@ Image.belongsTo(Product, {
     foreignKey: 'product_id',
 })
 
+Product.belongsToMany(User, {
+    through: Cart,
+    foreignKey: 'product_id',
+})
+
+User.belongsToMany(Product, {
+    through: Cart,
+    foreignKey: 'user_id',
+})
+
 module.exports = {
     Product,
     Category,
@@ -33,4 +44,5 @@ module.exports = {
     ProductTag,
     Image,
     User,
+    Cart,
 }

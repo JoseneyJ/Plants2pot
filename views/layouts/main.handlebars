@@ -11,24 +11,23 @@
 <body>
   <header>
 
-    <img src ="/images/logo.jpg" alt="logo" class="logo">
-  
-  <nav>
-    <a href="/">HOME</a>
-    <a href ="/aboutus">ABOUT US</a>
-    <a href="/contact">CONTACT</a>
-    <a href="/cart">CART</a>
-    <!-- If the user is logged in, show a logout button -->
-    {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <!-- Otherwise, show a link to login -->
-    <a href="/login">LOGIN</a>
-    {{/if}}
-  </nav>
+    <img src="/images/logo.jpg" alt="logo" class="logo">
+
+    <nav>
+      <a href="/">Home</a>
+      <a href="/aboutus">About Us</a>
+      <a href="/contact">Contact</a>
+      <a href="/cart">Cart</a>
+      <!-- If the user is logged in, show a logout button -->
+      {{#if loggedIn}}
+      <button id="logout" class="btn-no-style">Logout</button>
+      {{else}}
+      <!-- Otherwise, show a link to login -->
+      <a href="/login">Login</a>
+      {{/if}}
+    </nav>
   </header>
   <main>
-  
     <div class="gallery">
       {{{body}}}
     </div>

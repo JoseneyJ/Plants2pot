@@ -1,4 +1,4 @@
-<div>
-
-    <h2>Your cart has </h2>
-</div>
+<h1>Cart Items</h1>
+  {{#each products as |product|}}
+  {{> product-details}}
+  {{/each}}

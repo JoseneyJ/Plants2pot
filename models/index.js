@@ -3,8 +3,8 @@ const Category = require('./category')
 const Tag = require('./tag')
 const ProductTag = require('./productTag')
 const Image = require('./Image')
-const Cart = require('./Cart')
-const User = require('./Users')
+const Cart = require('./cart')
+const User = require('./users')
 
 Product.belongsTo(Category, {
     foreignKey: 'category_id',

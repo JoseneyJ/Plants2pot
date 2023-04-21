@@ -65,6 +65,8 @@ THEN I am taken to the homepage and presented with the plants for sale
 WHEN I click on 'add to cart'
 THEN I am prompted to login first before adding to cart.
 ```
+## Website Link:
+https://morning-sands-53592.herokuapp.com
 
 ## Snippets
 
